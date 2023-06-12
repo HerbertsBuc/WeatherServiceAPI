@@ -1,8 +1,7 @@
 ﻿namespace WeatherServiceAPI.Core.Models
 {
-    public class IPAddressData : Entity
+    public class IpAddressData : Entity
     {
-        public int Id { get; set; }
-        public string IPAddress { get; set; }
+        public string IpAddress { get; set; }
     }
 }
