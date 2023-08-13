@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using WeatherServiceAPI.Core.Models;
+using WeatherServiceAPI.Core.Services;
 using WeatherServiceAPI.Services.Interfaces;
 
 namespace WeatherServiceAPI.Controllers
@@ -13,7 +16,6 @@ namespace WeatherServiceAPI.Controllers
         {
             _dataExtractorService = dataExtractorService;
         }
-
 
         [HttpGet]
         public IActionResult GetWeatherData()

@@ -5,11 +5,13 @@ VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherServiceAPI", "WeatherServiceAPI\WeatherServiceAPI.csproj", "{D93D6D5C-B069-4CEA-9BC4-52F3B399A238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherServiceAPI.Core", "WeatherServiceAPI.Core\WeatherServiceAPI.Core.csproj", "{01C15D6A-9B7B-4042-A136-53310382F013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherServiceAPI.Core", "WeatherServiceAPI.Core\WeatherServiceAPI.Core.csproj", "{01C15D6A-9B7B-4042-A136-53310382F013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherServiceAPI.Data", "WeatherServiceAPI.Data\WeatherServiceAPI.Data.csproj", "{951401AD-C712-4774-AACC-19E63E5BBF28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherServiceAPI.Data", "WeatherServiceAPI.Data\WeatherServiceAPI.Data.csproj", "{951401AD-C712-4774-AACC-19E63E5BBF28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherServiceAPI.Services", "WeatherServiceAPI.Services\WeatherServiceAPI.Services.csproj", "{2AB7A234-1DF5-48C5-B2F6-5608EA7D512D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherServiceAPI.Services", "WeatherServiceAPI.Services\WeatherServiceAPI.Services.csproj", "{2AB7A234-1DF5-48C5-B2F6-5608EA7D512D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherServiceAPI.Tests", "WeatherServiceAPI.Tests\WeatherServiceAPI.Tests.csproj", "{570F5EAC-1471-4426-8126-4778EBB77A77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2AB7A234-1DF5-48C5-B2F6-5608EA7D512D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB7A234-1DF5-48C5-B2F6-5608EA7D512D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB7A234-1DF5-48C5-B2F6-5608EA7D512D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570F5EAC-1471-4426-8126-4778EBB77A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570F5EAC-1471-4426-8126-4778EBB77A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570F5EAC-1471-4426-8126-4778EBB77A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570F5EAC-1471-4426-8126-4778EBB77A77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

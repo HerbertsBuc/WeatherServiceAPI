@@ -1,33 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using WeatherServiceAPI.Core.Models;
 using WeatherServiceAPI.Core.Services;
 using WeatherServiceAPI.Data;
+using WeatherServiceAPI.Services.Interfaces;
 
 namespace WeatherServiceAPI.Services
 {
     public class WeatherDataService : EntityService<WeatherData>, IWeatherDataService
     {
-        public WeatherDataService(IWeatherServiceDbContext context) : base(context)
+        private readonly IWeatherDataServiceConfig _config;
+        public WeatherDataService(IWeatherServiceDbContext context, IWeatherDataServiceConfig config) : base(context)
         {
-
+            _config = config;
         }
 
-        public string GetWeatherDataJson(GeolocationData locationData, string apiKey)
+        public string GetWeatherDataJson(GeolocationData locationData)
         {
-            using (WebClient client = new WebClient())
+            try
             {
-                string jsonUrl = $"http://api.weatherapi.com/v1/current.json?key={apiKey}&q=" +
-                                 $"{locationData.Latitude.ToString().Replace(",", ".")}," +
-                                 $"{locationData.Longitude.ToString().Replace(",", ".")}";
+                using (WebClient client = new WebClient())
+                {
+                    string jsonUrl = $"http://api.weatherapi.com/v1/current.json?key={_config.ApiKey}&q=" +
+                                     $"{locationData.Latitude.ToString().Replace(",", ".")}," +
+                                     $"{locationData.Longitude.ToString().Replace(",", ".")}";
 
-                return client.DownloadString(jsonUrl);
+                    return client.DownloadString(jsonUrl);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error occurred while fetching weather data from 3rd party service.", e);
             }
         }
 

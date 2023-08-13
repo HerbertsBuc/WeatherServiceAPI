@@ -16,8 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<WeatherServiceDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("weather-service"),
-        b => b.MigrationsAssembly("WeatherServiceAPI.Data")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("weather-service"), b => b.MigrationsAssembly("WeatherServiceAPI.Data")));
 builder.Services.AddTransient<IWeatherServiceDbContext, WeatherServiceDbContext>();
 
 builder.Services.AddSingleton<IWeatherDataServiceConfig, WeatherDataServiceConfig>();
